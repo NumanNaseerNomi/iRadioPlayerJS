@@ -1,31 +1,36 @@
 {
-  "name": "icolorify",
-  "version": "1.0.4",
-  "description": "A library to colorify your console logs",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "name": "iradio.player.js",
+  "version": "2.0.4",
+  "description": "Wrapper for free and open-source radio browser api: https://api.radio-browser.info/.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codersgyan/codersgyan-colorify.git"
+    "url": "git+https://github.com/NumanNaseerNomi/iRadioPlayerJS.git"
   },
   "keywords": [
-    "console log colors",
-    "colorify logs"
+    "iradio.player.js",
+    "player",
+    "fm",
+    "radio",
+    "api",
+    "radio-browser-api",
+    "radio-browser-info"
   ],
-  "author": "Rakesh K <codersgyan@gmail.com>",
+  "author": "https://github.com/NumanNaseerNomi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codersgyan/codersgyan-colorify/issues"
+    "url": "https://github.com/NumanNaseerNomi/iRadioPlayerJS/issues"
   },
-  "homepage": "https://github.com/codersgyan/codersgyan-colorify#readme",
+  "homepage": "https://github.com/NumanNaseerNomi/iRadioPlayerJS#readme",
   "devDependencies": {
     "typescript": "^4.6.3"
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ]
 }
