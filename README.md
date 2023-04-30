@@ -31,7 +31,7 @@ API by default, returns `broken` stations (stations that are in the system but d
 If using in node.js environment, make sure you have a fetch implementation (e.g [node-fetch](https://www.npmjs.com/package/node-fetch)) available. You should also have an application name that is going to be passed as `user agent string` when talking to the API. You can use whatever you like but be consistent, the author of the API uses it to track usage statistics.
 
 ```ts
-import { iRadioPlayer, StationSearchType } from 'iradio.player.js'
+import { RadioPlayer, StationSearchType } from 'iradio.player.js'
 
 const api = new RadioPlayer()
 
