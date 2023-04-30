@@ -14,7 +14,7 @@ import {
  * Query the radio browser api.
  * @public
  */
-export class iRadioPlayer {
+export class RadioPlayer {
   // static version = __VERSION__
 
   protected baseUrl: string | undefined
