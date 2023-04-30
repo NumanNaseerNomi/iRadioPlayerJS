@@ -1,6 +1,6 @@
-# iRadioPlayer.js
+# iRadioPlayerJS
 
-[![GitHub license](https://img.shields.io/github/license/ivandotv/tinga)](https://github.com/NumanNaseerNomi/iRadioPlayer.js/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/ivandotv/tinga)](https://github.com/NumanNaseerNomi/iRadioPlayerJS/blob/main/LICENSE)
 [![semantic release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ## Install
@@ -33,7 +33,7 @@ If using in node.js environment, make sure you have a fetch implementation (e.g 
 ```ts
 import { iRadioPlayer, StationSearchType } from 'iradio.player.js'
 
-const api = new iRadioPlayer()
+const api = new RadioPlayer()
 
 await api.getStationsBy(StationSearchType.byTag, 'jazz')
 ```
@@ -43,9 +43,9 @@ await api.getStationsBy(StationSearchType.byTag, 'jazz')
 There are a lot of methods you can use to query the API.
 
 ```ts
-import { iRadioPlayer } from 'iradio.player.js'
+import { RadioPlayer } from 'iradio.player.js'
 
-const api = new iRadioPlayer()
+const api = new RadioPlayer()
 
 // query stations by country code and limit to first 100 stations
 const stations = await api.searchStations({
