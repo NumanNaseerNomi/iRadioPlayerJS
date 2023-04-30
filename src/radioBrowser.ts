@@ -15,7 +15,6 @@ import {
  * @public
  */
 export class RadioPlayer {
-  // static version = __VERSION__
 
   protected baseUrl: string | undefined
 
