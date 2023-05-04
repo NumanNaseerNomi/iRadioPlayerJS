@@ -1,5 +1,6 @@
 # iRadioPlayerJS
 
+![npm](https://img.shields.io/npm/dt/iradio.player.js?style=for-the-badge)
 [![GitHub license](https://img.shields.io/github/license/ivandotv/tinga)](https://github.com/NumanNaseerNomi/iRadioPlayerJS/blob/main/LICENSE)
 [![semantic release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
