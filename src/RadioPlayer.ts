@@ -535,14 +535,7 @@ export class RadioPlayer
       }
     }
 
-    if(!this.baseUrl)
-    {
-      // const results = await this.resolveBaseUrl()
-      // const random = Math.floor(Math.random() * results.length)
-      // this.setBaseUrl(`https://${results[random].name}`);
-      this.setBaseUrl(await this.getRandomBaseUrl());
-    }
-
+    this.baseUrl = this.baseUrl || await this.getRandomBaseUrl();
     const response = await fetch(`${this.baseUrl}/json/${url}`, finalConfig)
 
     if (response.ok) {
