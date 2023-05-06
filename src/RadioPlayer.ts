@@ -508,10 +508,11 @@ export class RadioPlayer {
       }
     }
 
-    if (!this.baseUrl) {
+    if(!this.baseUrl)
+    {
       const results = await this.resolveBaseUrl()
       const random = Math.floor(Math.random() * results.length)
-      this.baseUrl = `https://${results[random].name}`
+      this.setBaseUrl(`https://${results[random].name}`);
     }
 
     const response = await fetch(`${this.baseUrl}/json/${url}`, finalConfig)
