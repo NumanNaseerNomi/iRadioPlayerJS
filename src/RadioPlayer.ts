@@ -14,8 +14,8 @@ import {
  * Query the radio browser api.
  * @public
  */
-export class RadioPlayer {
-
+export class RadioPlayer
+{
   protected baseUrl: string | undefined
 
   protected fetchConfig: RequestInit = {
@@ -76,6 +76,33 @@ export class RadioPlayer {
    */
   getBaseUrl(): string | undefined {
     return this.baseUrl
+  }
+
+  /**
+   * Get random  base url
+   * @param isActive - Get active base url on first priority
+   * @returns Base url
+   */
+  async getRandomBaseUrl(isActive: boolean = true): Promise<string>
+  {
+    const servers = await this.resolveBaseUrl();
+    servers.sort(() => Math.random() - 0.5);
+
+    if(isActive)
+    {
+      for(const server of servers)
+      {
+        const serverResponse = await fetch(`https://${server.name}`);
+
+        if(serverResponse.ok)
+        {
+          return `https://${server.name}`;
+        }
+      }
+    }
+    
+    const randomServer = servers[Math.floor(Math.random() * servers.length)];
+    return `https://${randomServer.name}`;
   }
 
   /**
@@ -510,9 +537,10 @@ export class RadioPlayer {
 
     if(!this.baseUrl)
     {
-      const results = await this.resolveBaseUrl()
-      const random = Math.floor(Math.random() * results.length)
-      this.setBaseUrl(`https://${results[random].name}`);
+      // const results = await this.resolveBaseUrl()
+      // const random = Math.floor(Math.random() * results.length)
+      // this.setBaseUrl(`https://${results[random].name}`);
+      this.setBaseUrl(await this.getRandomBaseUrl());
     }
 
     const response = await fetch(`${this.baseUrl}/json/${url}`, finalConfig)
