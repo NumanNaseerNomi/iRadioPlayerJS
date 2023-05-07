@@ -105,7 +105,7 @@ export class RadioPlayer
     {
       for(const server of servers)
       {
-        const serverResponse = await fetch(`https://${server.name}`);
+        const serverResponse = await fetch(`https://${server.name}/json/stats`);
 
         if(serverResponse.ok)
         {
