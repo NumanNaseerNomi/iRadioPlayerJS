@@ -1,4 +1,5 @@
 import {
+  ApiUrl,
   StationSearchType,
   AdvancedStationQuery,
   CountryResult,
@@ -7,7 +8,8 @@ import {
   Station,
   StationQuery,
   StationResponse,
-  TagResult
+  TagResult,
+  ServersList
 } from './constants'
 
 /**
@@ -32,6 +34,17 @@ export class RadioPlayer
     this.fetchConfig.headers = { 'user-agent': this.appName }
   }
 
+  /**
+   *  Get servers list
+   * @param forceLoad - fetch all servers from api
+   * @returns Array of objects with the ip (optional) and name of the api server
+   */
+  async getServersList(forceLoad: boolean = false): Promise<{ ip?: string; name: string }[]>
+  {
+    const result = forceLoad ? await fetch(ApiUrl).then(response => response.ok ? response.json() : Promise.reject(response)) : ServersList;
+    return result;
+  }
+  
   /**
    * Resolves API base url this will be the default for all class instances.
    * @param autoSet - Automatically set first resolved base url
@@ -83,9 +96,9 @@ export class RadioPlayer
    * @param isActive - Get active base url on first priority
    * @returns Base url
    */
-  async getRandomBaseUrl(isActive: boolean = true): Promise<string>
+  async getRandomBaseUrl(isActive: boolean = false, forceLoad: boolean = false): Promise<string>
   {
-    const servers = await this.resolveBaseUrl();
+    const servers = await this.getServersList(forceLoad);
     servers.sort(() => Math.random() - 0.5);
 
     if(isActive)
@@ -101,8 +114,7 @@ export class RadioPlayer
       }
     }
     
-    const randomServer = servers[Math.floor(Math.random() * servers.length)];
-    return `https://${randomServer.name}`;
+    return `https://${servers[0].name}`;
   }
 
   /**
