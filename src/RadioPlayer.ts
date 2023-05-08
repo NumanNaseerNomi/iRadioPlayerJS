@@ -547,7 +547,7 @@ export class RadioPlayer
       }
     }
 
-    this.baseUrl = this.baseUrl || await this.getRandomBaseUrl(true, true);
+    this.baseUrl = this.baseUrl || await this.getRandomBaseUrl(true);
     const response = await fetch(`${this.baseUrl}/json/${url}`, finalConfig)
 
     if (response.ok) {
