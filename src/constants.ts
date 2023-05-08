@@ -20,10 +20,10 @@ export const ServersList =
       "ip": "2001:19f0:5001:32a4:5400:2ff:fe37:75c2",
       "name": "nl1.api.radio-browser.info"
   },
-  {
-      "ip": "89.58.16.19",
-      "name": "v22022045963187310.megasrv.de"
-  },
+  // {
+  //     "ip": "89.58.16.19",
+  //     "name": "v22022045963187310.megasrv.de"
+  // },
   {
       "ip": "91.132.145.114",
       "name": "de1.api.radio-browser.info"
